@@ -21,25 +21,31 @@ public class InsSortInt {
         Integer[] arr = new Integer[in.size()];
         in.toArray(arr);
 //insertion sort
-        for(int i=1; i<arr.length; i++){
-            int count = i-1;
-            int key=arr[i];
+        insort(arr);
+       
 
-            while(count>=0 && arr[count]>=key){
+        System.out.println("Smallest Value: "+ arr[0]+" and Largest Value: "+arr[arr.length-1]);
+    }
+    public static void insort(Integer[] a){
 
-                arr[count+1] = arr[count];
-                count--;
+        for(int i=0; i<a.length; i++){
+
+            int j = i-1;
+            int key = a[i];
+            
+            while(j>=0 && a[j]>key){
+                a[j+1] = a[j];
+                j--;
 
             }
 
-            arr[count+1]=key;        
+            a[j+1]= key;
 
 
         }
 
-        System.out.println("Smallest Value: "+ arr[0]+" and Largest Value: "+arr[arr.length-1]);
-    }
 
+    }
 
 
 }
